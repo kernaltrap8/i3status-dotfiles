@@ -37,5 +37,5 @@ memory {
 	unit = "auto"
 }
 time {
-	format = "%m-%d-%Y %H:%M:%S %p"
+	format = "%m-%d-%Y %I:%M:%S %p"
 }
