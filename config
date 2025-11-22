@@ -8,6 +8,7 @@ order += "ethernet enp4s0"
 order += "cpu_temperature 0"
 order += "cpu_temperature 1"
 order += "cpu_usage"
+order += "read_file GPU_PERCENT"
 order += "memory"
 order += "time"
 
