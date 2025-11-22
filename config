@@ -1,0 +1,40 @@
+general {
+	output_format = "i3bar"
+	colors = true
+	interval = 1
+}
+
+order += "ethernet enp4s0"
+order += "cpu_temperature 0"
+order += "cpu_temperature 1"
+order += "cpu_usage"
+order += "memory"
+order += "time"
+
+read_file MUSIC {
+	format = "%content"
+	path = "~/.config/i3status/media_status"
+}
+ethernet enp4s0 {
+	format_up = "E: %ip (%speed)"
+	format_down = "E: down :("
+}
+cpu_temperature 0 {
+	format = "C: %degrees°C"
+	path = "/sys/class/hwmon/hwmon1/temp1_input"
+}
+cpu_temperature 1 {
+	format = "G: %degrees°C"
+	path = "/sys/class/hwmon/hwmon3/temp1_input"
+}
+cpu_usage {
+	format = "C: %usage"
+	max_threshold = "85"
+}
+memory {
+	format = "M: %used / %total (%available)"
+	unit = "auto"
+}
+time {
+	format = "%m-%d-%Y %H:%M:%S %p"
+}
