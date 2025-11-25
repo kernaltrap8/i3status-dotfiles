@@ -4,7 +4,7 @@ output_file="$HOME/.config/i3status/media_status"
 fallback_output="S: No song"
 output_format="{{status}}|{{xesam:artist}} - {{xesam:title}}"
 
-trap 'echo "$fallback_output" > "$output_file"' EXIT
+trap 'echo "$fallback_output" > "$output_file" && rm $output_file' EXIT
 
 # Initialize with fallback
 echo "$fallback_output" > "$output_file"

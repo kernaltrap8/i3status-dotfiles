@@ -22,11 +22,11 @@ ethernet enp4s0 {
 }
 cpu_temperature 0 {
 	format = "C: %degrees°C"
-	path = "/sys/class/hwmon/hwmon1/temp1_input"
+	path = "/sys/class/hwmon/hwmon0/temp1_input"
 }
 cpu_temperature 1 {
 	format = "G: %degrees°C"
-	path = "/sys/class/hwmon/hwmon3/temp1_input"
+	path = "/sys/class/hwmon/hwmon2/temp1_input"
 }
 cpu_usage {
 	format = "C: %usage"
@@ -37,5 +37,6 @@ memory {
 	unit = "auto"
 }
 time {
-	format = "%m-%d-%Y %I:%M:%S %p"
+	#format = "%m-%d-%Y %I:%M:%S %p"
+	format = "%a %m-%d-%Y %I:%M:%S %p"
 }
