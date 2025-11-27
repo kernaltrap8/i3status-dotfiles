@@ -5,6 +5,8 @@ general {
 }
 
 order += "ethernet enp4s0"
+order += "disk /"
+order += "disk /home"
 order += "cpu_temperature 0"
 order += "cpu_temperature 1"
 order += "cpu_usage"
@@ -17,7 +19,7 @@ read_file MUSIC {
 	path = "~/.config/i3status/media_status"
 }
 ethernet enp4s0 {
-	format_up = "E: %ip (%speed)"
+	format_up = "E: %ip" 
 	format_down = "E: down :("
 }
 cpu_temperature 0 {
@@ -35,6 +37,15 @@ cpu_usage {
 memory {
 	format = "M: %used / %total (%available)"
 	unit = "auto"
+}
+disk "/" {
+    format = "/: %free"
+}
+disk "/home" {
+    format = "~: %free"
+}
+disk "/mnt/slowfuck" {
+    format = "HDD: %free"
 }
 time {
 	#format = "%m-%d-%Y %I:%M:%S %p"
